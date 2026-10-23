@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "action-demo-devops"
+version = "0.1.0"
+description = "A small greeting application used to demonstrate GitHub Actions and DevOps workflows."
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "build>=0.10.0,<0.11.0",
+    "pylint>=3,<5",
+    "pytest>=7,<9",
+]
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.pytest.ini_options]
+testpaths = ["test_main.py"]
+
+[tool.pylint.main]
+disable = ["missing-function-docstring", "missing-module-docstring"]
